@@ -1,7 +1,7 @@
 import SocketServer,os
 # coding: utf-8
 
-# Copyright 2013 Abram Hindle, Eddie Antonio Santos
+# Copyright 2013 Abram Hindle, Eddie Antonio Santos,Lin Tong, bowen qi
 # 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ class MyWebServer(SocketServer.BaseRequestHandler):
                 fp=open(indexHtml).read()
                 fp2=open(deepCss).read()
                 responseG=self.response_is_good(indexHtml,"html")
+<<<<<<< HEAD
                 open_web=self.open_page(responseG,fp,fp2)
 	elif path[-4:]=="deep"and path[-1] is not "/":
 		print(path)
@@ -60,6 +61,9 @@ class MyWebServer(SocketServer.BaseRequestHandler):
                 fp2=open(path+"/deep.css").read()
                 responseG=self.response_is_good(indexHtml,"html")
                 open_web=self.open_page(responseG,fp,fp2)
+=======
+                open_web=self.open_page(responseG,fp,fp2)    
+>>>>>>> 4013b9da1a79e255b2ea24a3d36a6c4ef6a45f55
 #check /.. 404      
         elif "/.." in path:
             responseG=self.NoResponse()
